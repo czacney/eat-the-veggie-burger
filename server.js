@@ -1,4 +1,7 @@
 const express = require("express");
+const express_handlebars = require("express-handlebars");
+const routes = require("./controllers/burgerController.js");
+
 
 const PORT = process.env.PORT || 8080;
 
@@ -12,8 +15,6 @@ app.use(express.json());
 
 app.engine("handlebars", express_handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-const express_handlebars = require("express-handlebars");
 
 app.use(routes);
 
