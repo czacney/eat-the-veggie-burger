@@ -1,8 +1,8 @@
 <container>
-
+    <div class= "row">
     <h2>Veggie burgers to try!</h2>
 
-    <ul>
+    <ul id= "lefty">
         {{#each burgers}}
         {{#unless devoured}}
         {{> burgers/burger-block devoured=true}}
@@ -11,8 +11,7 @@
     </ul>
 
     <h2>DEVOURED!</h2>
-
-    <ul>
+    <ul id ="righty">
         {{#each burgers}}
         {{#if devoured}}
         {{> burgers/burger-block devoured=false}}
@@ -20,20 +19,11 @@
         {{/each}}
     </ul>
 
-    <h2>Add a veggie burger to try!</h2>
     <form class="create-form">
-
         <div class="form-group">
-            <label for="burger">Burger:</label>
             <input type="text" id="burger" name="name">
         </div>
-
-        <div class="form-group">
-            <label for="devoured">DEVOUR?!</label><br>
-            <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-        </div>
-
-        <button type="submit">Add Veggie Burger!</button>
+        <button type="submit">Add a Veggie Burger!</button>
     </form>
-
+</div>
 </container>
